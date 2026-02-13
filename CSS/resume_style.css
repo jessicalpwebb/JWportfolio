@@ -1,0 +1,134 @@
+/* Resume-specific styles to be added to project-styles.css */
+
+/* Resume Preview Section */
+.resume-preview-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #0a0a1a 100%);
+}
+
+.resume-pages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 4rem 0;
+    align-items: center;
+}
+
+.resume-page-wrapper {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.page-label {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #808080;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.resume-page-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.resume-page-card:hover {
+    transform: translateY(-5px);
+    border-color: #4da6ff;
+    box-shadow: 0 20px 60px rgba(77, 166, 255, 0.2);
+}
+
+.resume-page-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Download CTA Section */
+.download-cta-section {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 3rem;
+    background: rgba(255, 105, 180, 0.05);
+    border: 2px solid rgba(255, 105, 180, 0.2);
+    border-radius: 16px;
+}
+
+.download-cta-section h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.download-cta-section p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+
+
+/* Responsive Design for Resume Page */
+@media (max-width: 968px) {
+    .resume-page-wrapper {
+        max-width: 100%;
+    }
+
+    .resume-page-card {
+        padding: 1.5rem;
+    }
+
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .download-cta-section {
+        padding: 2rem;
+    }
+
+    .download-cta-section h3 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .resume-pages-container {
+        gap: 2rem;
+    }
+
+    .resume-page-card {
+        padding: 1rem;
+    }
+
+
+    .download-cta-section {
+        padding: 1.5rem;
+    }
+
+    .download-cta-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .download-cta-section p {
+        font-size: 1rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta-group .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
