@@ -6,7 +6,7 @@
     <title>Resume - Jessica Webb</title>
     <link rel="stylesheet" href="../CSS/project-styles.css">
 </head>
-<body>
+<body class="has-section-nav">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">JW</div>
@@ -33,7 +33,7 @@
     </section>
 
     <!-- Resume Preview Section -->
-    <section class="section resume-preview-section" id="resume-preview">
+    <section class="section resume-preview-section" id="resume-preview" id="resume-preview">
         <div class="container">
             <h2 class="section-title">Resume Preview</h2>
             <p class="section-intro">
@@ -84,6 +84,30 @@
     <footer class="footer">
         <p>© 2026 JW Portfolio.</p>
     </footer>
+    <nav class="section-nav" aria-label="Section navigation">
+    <a class="section-nav-link" href="#resume-preview">Resume</a>
+</nav>
+    <script>
+(function() {
+  var ids = ['resume-preview'];
+  function updateActive() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var active = ids[0];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && el.getBoundingClientRect().top + scrollY <= scrollY + window.innerHeight / 2) {
+        active = ids[i];
+      }
+    }
+    document.querySelectorAll('.section-nav-link').forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+    });
+  }
+  window.addEventListener('scroll', updateActive, {passive: true});
+  window.addEventListener('load', updateActive);
+})();
+</script>
+
     <script src="../theme.js"></script>
 </body>
 </html>
