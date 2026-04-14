@@ -6,7 +6,7 @@
     <title>PortfolAI Website Development - Project Details</title>
     <link rel="stylesheet" href="../CSS/project-styles.css">
 </head>
-<body>
+<body class="has-section-nav">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">JW</div>
@@ -45,7 +45,7 @@
     </section>
 
     <!-- Overview Section -->
-    <section class="section overview-section">
+    <section class="section overview-section" id="overview">
         <div class="container">
             <h2 class="section-title">Project Overview</h2>
             <p class="overview-text">
@@ -65,7 +65,7 @@
     </section>
 
     <!-- Initial Design Section -->
-    <section class="section design-section">
+    <section class="section design-section" id="design">
         <div class="container">
             <h2 class="section-title">Initial Design & Planning</h2>
             
@@ -106,7 +106,7 @@
     </section>
 
     <!-- Technical Implementation Section -->
-    <section class="section tech-section">
+    <section class="section tech-section" id="tech">
         <div class="container">
             <h2 class="section-title">Technical Implementation</h2>
             <p class="section-intro">
@@ -151,7 +151,7 @@
     </section>
 
     <!-- Final Outcome Section -->
-    <section class="section outcome-section">
+    <section class="section outcome-section" id="outcome">
         <div class="container">
             <h2 class="section-title">Final Outcome</h2>
 
@@ -205,6 +205,33 @@
     <footer class="footer">
         <p>© 2026 JW Portfolio.</p>
     </footer>
+    <nav class="section-nav" aria-label="Section navigation">
+    <a class="section-nav-link" href="#overview">Overview</a>
+    <a class="section-nav-link" href="#design"><span class="nav-index">01 / Plan</span>Design</a>
+    <a class="section-nav-link" href="#tech"><span class="nav-index">02 / Build</span>Tech</a>
+    <a class="section-nav-link" href="#outcome"><span class="nav-index">03 / Result</span>Outcome</a>
+</nav>
+    <script>
+(function() {
+  var ids = ['overview', 'design', 'tech', 'outcome'];
+  function updateActive() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var active = ids[0];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && el.getBoundingClientRect().top + scrollY <= scrollY + window.innerHeight / 2) {
+        active = ids[i];
+      }
+    }
+    document.querySelectorAll('.section-nav-link').forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+    });
+  }
+  window.addEventListener('scroll', updateActive, {passive: true});
+  window.addEventListener('load', updateActive);
+})();
+</script>
+
     <script src="../theme.js"></script>
 </body>
 </html>
