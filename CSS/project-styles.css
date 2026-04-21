@@ -1346,6 +1346,82 @@ html { scroll-behavior: smooth; }
 .download-cta-section p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; transition: color 0.3s ease; }
 
 /* ============================================
+   STICKY SECTION NAV (BOTTOM)
+   ============================================ */
+.section-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: var(--bg-navbar);
+  border-top: 1px solid var(--border-subtle);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.section-nav::-webkit-scrollbar { display: none; }
+
+.section-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.75rem 1.4rem;
+  color: var(--text-faint);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  border-right: 1px solid var(--border-subtle);
+  transition: color 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.section-nav-link:last-child { border-right: none; }
+
+.section-nav-link .nav-index {
+  font-size: 0.65rem;
+  color: var(--text-faint);
+  opacity: 0.6;
+  transition: color 0.25s ease;
+}
+
+.section-nav-link:hover {
+  color: var(--accent-blue);
+  background: rgba(77, 166, 255, 0.06);
+}
+
+.section-nav-link:hover .nav-index { color: var(--accent-blue); }
+
+.section-nav-link.active {
+  color: var(--accent-pink);
+  border-bottom: 2px solid var(--accent-pink);
+}
+
+.section-nav-link.active .nav-index { color: var(--accent-pink); }
+
+/* push page content up so it doesn't hide behind the nav */
+body.has-section-nav { padding-bottom: 4rem; }
+/* also push theme toggle above the section nav */
+body.has-section-nav #theme-toggle { bottom: 5.5rem; }
+
+@media (max-width: 600px) {
+  .section-nav-link { padding: 0.65rem 0.9rem; font-size: 0.62rem; }
+  body.has-section-nav #theme-toggle { bottom: 5rem; }
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 968px) {
