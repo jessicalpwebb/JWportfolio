@@ -117,6 +117,117 @@
 }
 
 /* ============================================
+   PROJECTS DROPDOWN NAV
+   ============================================ */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  font-family: 'Georgia', serif;
+  padding: 0;
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--accent-blue);
+}
+
+.nav-dropdown-trigger .dropdown-arrow {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.nav-dropdown:hover .dropdown-arrow,
+.nav-dropdown:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 240px;
+  background: var(--bg-navbar);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.75rem 0.5rem 0.5rem;
+  margin-top: 0;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 2000;
+}
+
+/* Invisible bridge fills the gap so mouse can travel from trigger to menu */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 0.75rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  gap: 0.15rem;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.nav-dropdown-item .item-title {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.nav-dropdown-item:hover .item-title {
+  color: var(--accent-blue);
+}
+
+.nav-dropdown-item .item-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  transition: color 0.2s ease;
+}
+
+.nav-dropdown-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 0.4rem 0.5rem;
+}
+
+/* ============================================
    THEME TOGGLE BUTTON
    ============================================ */
 #theme-toggle {
