@@ -121,6 +121,8 @@
    ============================================ */
 .nav-dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-dropdown-trigger {
@@ -362,6 +364,7 @@ h1, h2, h3 {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
 }
 
