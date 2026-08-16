@@ -81,41 +81,14 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
-        }
-
-        .speech-bubble {
-            position: relative;
-            background: linear-gradient(135deg, #3b2060 0%, #2a1545 100%);
-            border-radius: 28px 28px 28px 6px;
-            padding: 2.5rem 3rem;
-            box-shadow: 0 20px 60px rgba(59, 32, 96, 0.4);
-        }
-
-        .speech-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 28px;
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 0px solid transparent;
-            border-top: 22px solid #2a1545;
-        }
-
-        .speech-bubble h2 {
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            color: #ffffff;
-            line-height: 1.1;
-            letter-spacing: -0.01em;
+            align-items: flex-start;
+            gap: 1.5rem;
         }
 
         .connect-tagline {
             font-size: 1rem;
             color: var(--text-muted);
             line-height: 1.7;
-            margin-top: 1rem;
         }
 
         .connect-tagline a {
@@ -131,7 +104,8 @@
 
         .contact-links {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             gap: 1rem;
         }
 
@@ -396,6 +370,10 @@
             <div class="nav-dropdown">
                 <button class="nav-dropdown-trigger">Projects <span class="dropdown-arrow">▼</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="allegion_sum.html" class="nav-dropdown-item">
+                        <span class="item-title">Allegion UX Design Engineering</span>
+                        <span class="item-subtitle">Design Systems · AI-Assisted UX Engineering</span>
+                    </a>
                     <a href="portfolAI_sum.html" class="nav-dropdown-item">
                         <span class="item-title">PortfolAI Website</span>
                         <span class="item-subtitle">Software Engineering · AI Integration</span>
@@ -439,15 +417,10 @@
 
         <!-- Left: info -->
         <div class="contact-info">
-            <div>
-                <div class="speech-bubble">
-                    <h2>LET'S<br>TALK</h2>
-                </div>
-                <p class="connect-tagline" style="margin-top: 2rem;">
-                    Drop me a line using the form, or connect with me directly on
-                    <a href="https://www.linkedin.com/in/jessica-webb-b871b7255/" target="_blank">LinkedIn</a>.
-                </p>
-            </div>
+            <p class="connect-tagline">
+                Drop me a line using the form, or connect with me directly on
+                <a href="https://www.linkedin.com/in/jessica-webb-b871b7255/" target="_blank">LinkedIn</a>.
+            </p>
 
             <div class="contact-links">
                 <a href="https://www.linkedin.com/in/jessica-webb-b871b7255/" target="_blank" class="contact-link-card">
